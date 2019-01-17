@@ -1,6 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>Let's do some notifications from ashes!</h1>
+  <app-notification position="{{ _position }}"></app-notification>
+  <div *ngFor="let position of positions">
+    <input
+      id="{{ position }}"
+      type="radio"
+      [value]="position"
+      [(ngModel)]="_position"
+    />
+    <label for="{{ position }}">{{ position }}</label>
+  </div>
 </div>
 
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
