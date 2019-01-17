@@ -131,5 +131,8 @@
       }
     }
   },
-  "defaultProject": "ng-nots"
+  "defaultProject": "ng-nots",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
