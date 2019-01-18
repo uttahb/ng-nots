@@ -7,5 +7,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ng-nots';
   public _position = 'top-left';
+  public notificationVisible = false;
   positions = ['top-left', 'top-right', 'bottom-left', 'bottom-right'];
+  showNotification() {
+    this.notificationVisible = true;
+    setTimeout(() => {
+      this.notificationVisible = false;
+    }, 6000);
+  }
 }
