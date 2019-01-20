@@ -20,7 +20,7 @@ export class AppComponent {
     this.store.dispatch(
       new ShowNotification({
         isVisible: false,
-        isCloseButton: false,
+        isCloseButton: true,
         header: 'pinnalla',
         body: 'Hai how are you',
         timeout: 6000,

@@ -57,4 +57,11 @@
 .notContainer {
   height: 45px;
   width: 100%;
+  position: relative;
+}
+.closeButton {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
 }

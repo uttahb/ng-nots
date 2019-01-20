@@ -3,6 +3,13 @@
     *ngFor="let notification of notifications"
     class="{{ 'notContainer ' + notification.category }}"
   >
+    <p
+      class="closeButton"
+      *ngIf="notification.isCloseButton"
+      (click)="hideThisNotifcation(index)"
+    >
+      X
+    </p>
     <div class="notHeader">{{ notification.header }}</div>
     <div class="notBody">{{ notification.body }}</div>
   </div>

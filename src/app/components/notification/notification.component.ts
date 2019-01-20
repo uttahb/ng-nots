@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { ShowNotification } from './store';
+import { ShowNotification, HideNotification } from './store';
 import { messages, Notification } from './store';
 
 @Component({
@@ -47,5 +47,8 @@ export class NotificationComponent implements OnInit {
 
   ngOnInit() {
     console.log(this._position, 'position');
+  }
+  hideThisNotifcation(index) {
+    this.store.dispatch(new HideNotification(index));
   }
 }
