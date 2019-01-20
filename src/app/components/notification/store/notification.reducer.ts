@@ -14,12 +14,10 @@ const initialState: Notification = {
 };
 
 // Section 2
-export function reducer(
-  state: Notification[] = [initialState],
+export default function reducer(
+  state: Notification[] = [],
   action: NotificationActions.Actions
 ) {
-  console.log(action, 'action');
-
   // Section 3
   switch (action.type) {
     case NotificationActions.SHOW_NOTIFICATION:
@@ -31,10 +29,11 @@ export function reducer(
       } else {
         newNotificaitonArr = state;
       }
+      console.log([...newNotificaitonArr, action.payload]);
       return [...newNotificaitonArr, action.payload];
       break;
     case NotificationActions.HIDE_NOTIFICATION:
-      let notificaitonArr = state;
+      const notificaitonArr = state;
       notificaitonArr.splice(action.payload, 1);
       return [...notificaitonArr];
     default:

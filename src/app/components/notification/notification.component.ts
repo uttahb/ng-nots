@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { ShowNotification } from './store';
+import { messages, Notification } from './store';
 
 @Component({
   selector: 'app-notification',
@@ -19,10 +21,10 @@ export class NotificationComponent implements OnInit {
   public messageBody: string;
   public messageHeader: string;
   public;
+  notifications: Notification[];
 
   @Input()
   set position(position: string) {
-    console.log('in position setter');
     let pos = (position && position.trim()) || 'top-left';
     if (!this.positionsEnum.includes(pos)) {
       pos = 'top-left';
@@ -31,14 +33,17 @@ export class NotificationComponent implements OnInit {
   }
   @Input()
   set category(category: string) {
-    console.log('category', category);
     let cat = (category && category.trim()) || 'warning';
     if (!this.categoryEnum.includes(cat)) {
       cat = 'warning';
     }
     this._category = ' ' + cat;
   }
-  constructor(private store: Store<any>) {}
+  constructor(private store: Store<any>) {
+    this.store.select(messages).subscribe((notifications: Notification[]) => {
+      this.notifications = notifications;
+    });
+  }
 
   ngOnInit() {
     console.log(this._position, 'position');

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ShowNotification } from './components/notification/store/notification.actions';
-import { showMessage } from './components/notification/store/notification.selectors';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,23 +21,13 @@ export class AppComponent {
       new ShowNotification({
         isVisible: false,
         isCloseButton: false,
-        header: '',
+        header: 'pinnalla',
         body: 'Hai how are you',
         timeout: 6000,
         id: 1,
-        position: 'bottom-left',
-        category: 'warning'
+        position: this._position,
+        category: this._category
       })
     );
-    this.store.select(showMessage).subscribe(data => {
-      this.notificationVisible = data;
-      console.log(this.notificationVisible, 'Visible');
-
-      if (this.notificationVisible) {
-        setTimeout(() => {
-          this.notificationVisible = false;
-        }, 6000);
-      }
-    });
   }
 }

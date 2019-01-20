@@ -2,7 +2,7 @@
   position: absolute;
   left: 15px;
   top: 15px;
-  height: 45px;
+  height: auto;
   width: 250px;
 }
 
@@ -10,7 +10,7 @@
   position: absolute;
   left: 15px;
   bottom: 15px;
-  height: 45px;
+  height: auto;
   width: 250px;
 }
 
@@ -18,7 +18,7 @@
   position: absolute;
   right: 15px;
   top: 15px;
-  height: 45px;
+  height: auto;
   width: 250px;
 }
 
@@ -26,18 +26,35 @@
   position: absolute;
   right: 15px;
   bottom: 15px;
-  height: 45px;
+  height: auto;
   width: 250px;
 }
 
 .warning {
-  color: green;
+  background-color: green;
+  color: white;
 }
 
 .info {
-  color: yellow;
+  background-color: yellow;
+  color: black;
 }
 
 .error {
-  color: red;
+  background-color: red;
+  color: white;
+}
+.notHeader {
+  width: 100%;
+  float: left;
+  font-weight: 500;
+}
+.notBody {
+  width: 100%;
+  float: left;
+  font-weight: normal;
+}
+.notContainer {
+  height: 45px;
+  width: 100%;
 }

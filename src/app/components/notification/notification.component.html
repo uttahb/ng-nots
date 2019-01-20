@@ -1,1 +1,9 @@
-<div class="{{ _position }}{{_category}}">notification works!</div>
+<div class="{{ 'notsContainer ' + notifications[0]?.position }}">
+  <div
+    *ngFor="let notification of notifications"
+    class="{{ 'notContainer ' + notification.category }}"
+  >
+    <div class="notHeader">{{ notification.header }}</div>
+    <div class="notBody">{{ notification.body }}</div>
+  </div>
+</div>
