@@ -29,6 +29,17 @@ export default function reducer(
       } else {
         newNotificaitonArr = state;
       }
+      if (state.length > 0) {
+        let pos = state[0].position;
+        state.forEach(data => {
+          if (data.position !== pos) {
+            newNotificaitonArr = [];
+            newNotificaitonArr.push(data);
+            console.log(newNotificaitonArr, 'New');
+          }
+        });
+      }
+
       console.log([...newNotificaitonArr, action.payload]);
       return [...newNotificaitonArr, action.payload];
       break;

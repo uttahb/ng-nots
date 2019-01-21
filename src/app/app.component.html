@@ -1,15 +1,30 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div class="container">
   <h1>Let's do some notifications from ashes!</h1>
   <app-notification position="{{ _position }}" category="{{_category}}"></app-notification>
-  <div *ngFor="let position of positions">
-    <input id="{{ position }}" type="radio" [value]="position" [(ngModel)]="_position" />
-    <label for="{{ position }}">{{ position }}</label>
-  </div>
-
-  <div *ngFor="let category of categories">
-    <input id="{{ category }}" type="radio" [value]="category" [(ngModel)]="_category">
-    <label for="{{ category }}">{{ category }}</label>
+  <div class="container-options">
+    <div>
+      <h2>Position</h2>
+      <div *ngFor="let position of positions">
+        <input id="{{ position }}" type="radio" [value]="position" [(ngModel)]="_position" />
+        <label for="{{ position }}">{{ position }}</label>
+      </div>
+    </div>
+    <div>
+      <h2>Category</h2>
+      <div *ngFor="let category of categories">
+        <input id="{{ category }}" type="radio" [value]="category" [(ngModel)]="_category">
+        <label for="{{ category }}">{{ category }}</label>
+      </div>
+    </div>
+    <div>
+      <h2>Header</h2>
+      <input type="text" [(ngModel)]="header" id="" placeholder="Header">
+    </div>
+    <div>
+      <h2>Body</h2>
+      <input type="text" [(ngModel)]="body" id="" placeholder="body">
+    </div>
   </div>
   <button (click)="showNotification()"> Click</button>
 </div>

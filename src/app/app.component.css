@@ -1,0 +1,29 @@
+.container {
+  height: 100vh;
+  background-image: linear-gradient(to right, rgba(53, 20, 20, 0.64), rgba(255, 0, 0, 0.69));
+  text-align: center;
+  padding: 2rem;
+}
+
+.container-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 3rem 6rem;
+  grid-gap: 20px
+}
+
+input[type="text"] {
+  height: 27px;
+  border: 0px;
+  border-radius: 4px;
+  padding: 3px 10px;
+}
+
+button {
+  border: 0;
+  padding: 0.5rem 1rem;
+  width: 100px;
+  border-radius: 17px;
+  color: white;
+  background: #311f1e;
+}

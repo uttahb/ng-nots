@@ -20,7 +20,7 @@ export class NotificationComponent implements OnInit {
   private _category: string;
   public messageBody: string;
   public messageHeader: string;
-  public;
+  public i = 0;
   notifications: Notification[];
 
   @Input()
@@ -42,12 +42,14 @@ export class NotificationComponent implements OnInit {
   constructor(private store: Store<any>) {
     this.store.select(messages).subscribe((notifications: Notification[]) => {
       this.notifications = notifications;
+      this.i++;
+      if (this.i === 4) {
+        return false;
+      }
     });
   }
 
-  ngOnInit() {
-    console.log(this._position, 'position');
-  }
+  ngOnInit() {}
   hideThisNotifcation(index) {
     this.store.dispatch(new HideNotification(index));
   }

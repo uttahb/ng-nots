@@ -31,37 +31,57 @@
 }
 
 .warning {
-  background-color: green;
+  background-color: #449a60;
   color: white;
+}
+
+.warning .notHeader {
+  background-color: #43a964ab;
 }
 
 .info {
-  background-color: yellow;
+  background-color: #da822b;
   color: black;
 }
 
+.info .notHeader {
+  background-color: #c3782e9e;
+}
+
 .error {
-  background-color: red;
+  background-color: #d23a1f;
   color: white;
 }
+
+.error .notHeader {
+  background-color: #982d1a8f;
+}
+
 .notHeader {
   width: 100%;
   float: left;
-  font-weight: 500;
+  font-weight: 600;
 }
+
 .notBody {
   width: 100%;
   float: left;
   font-weight: normal;
 }
+
 .notContainer {
   height: 45px;
   width: 100%;
   position: relative;
 }
+
 .closeButton {
   position: absolute;
   right: 0;
   top: 0;
   cursor: pointer;
+}
+
+.material-icons {
+  font-size: 18px;
 }
