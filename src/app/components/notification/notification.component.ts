@@ -41,6 +41,14 @@ export class NotificationComponent implements OnInit {
   }
   constructor(private store: Store<any>) {
     this.store.select(messages).subscribe((notifications: Notification[]) => {
+      notifications.forEach((not, index) => {
+        console.log(not, index);
+        if (not.category === 'info') {
+          setTimeout(() => {
+            this.hideThisNotifcation(index);
+          }, not.timeout);
+        }
+      });
       this.notifications = notifications;
       this.i++;
       if (this.i === 4) {

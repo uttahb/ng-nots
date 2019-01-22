@@ -25,7 +25,7 @@ export class AppComponent {
         isCloseButton: true,
         header: this.header,
         body: this.body,
-        timeout: 6000,
+        timeout: 90000,
         id: 1,
         position: this._position,
         category: this._category
