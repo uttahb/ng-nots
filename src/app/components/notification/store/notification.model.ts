@@ -1,3 +1,4 @@
+// Model for a current notification item.
 export interface Notification {
   isCloseButton: boolean;
   header: string;

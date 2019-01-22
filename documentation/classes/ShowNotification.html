@@ -248,13 +248,13 @@ import { Notification } from &#x27;./notification.model&#x27;;
 export const SHOW_NOTIFICATION &#x3D; &#x27;[NOTIFICATION] Show&#x27;;
 export const HIDE_NOTIFICATION &#x3D; &#x27;[NOTIFICATION] Hide&#x27;;
 
-// Section 3
+// Action for showing notification
 export class ShowNotification implements Action {
   readonly type &#x3D; SHOW_NOTIFICATION;
 
   constructor(public payload: Notification) {}
 }
-
+// Action for hiding notificaiton
 export class HideNotification implements Action {
   readonly type &#x3D; HIDE_NOTIFICATION;
   constructor(public payload: number) {}

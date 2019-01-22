@@ -225,7 +225,6 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BrowserModule } from &#x27;@angular/platform-browser&#x27;;
 import { NgModule } from &#x27;@angular/core&#x27;;
 import {
-  RouterStateSerializer,
   StoreRouterConfig,
   StoreRouterConnectingModule
 } from &#x27;@ngrx/router-store&#x27;;
@@ -233,14 +232,11 @@ import { AppRoutingModule } from &#x27;./app-routing.module&#x27;;
 import { AppComponent } from &#x27;./app.component&#x27;;
 import { StoreModule } from &#x27;@ngrx/store&#x27;;
 import { reducers, metaReducers } from &#x27;./reducers&#x27;;
-import { EffectsModule } from &#x27;@ngrx/effects&#x27;;
-import { AppEffects } from &#x27;./app.effects&#x27;;
 import { StoreDevtoolsModule } from &#x27;@ngrx/store-devtools&#x27;;
 import { environment } from &#x27;../environments/environment&#x27;;
 import { NotificationComponent } from &#x27;./components/notification/notification.component&#x27;;
 import { FormsModule } from &#x27;@angular/forms&#x27;;
 const DEV_IMPORTS: any[] &#x3D; [
-  // NOTE: instrument must come *after* importing StoreModule.
   StoreRouterConnectingModule.forRoot(&lt;StoreRouterConfig&gt;{
     stateKey: &#x27;router&#x27;
   }),
@@ -255,7 +251,6 @@ const DEV_IMPORTS: any[] &#x3D; [
     AppRoutingModule,
     FormsModule,
     StoreModule.forRoot(reducers, { metaReducers }),
-    EffectsModule.forRoot([AppEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     ...DEV_IMPORTS
   ],

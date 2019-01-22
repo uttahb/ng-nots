@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ShowNotification } from './components/notification/store/notification.actions';
+
+/**
+ * Presentation component for showcasing notifications.
+ */
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
