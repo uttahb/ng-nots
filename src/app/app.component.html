@@ -1,32 +1,47 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
   <h1>Let's do some notifications from ashes!</h1>
-  <app-notification position="{{ _position }}" category="{{_category}}"></app-notification>
+  <app-notification
+    position="{{ _position }}"
+    category="{{ _category }}"
+  ></app-notification>
   <div class="container-options">
     <div>
       <h2>Position</h2>
       <div *ngFor="let position of positions">
-        <input id="{{ position }}" type="radio" [value]="position" [(ngModel)]="_position" />
+        <input
+          id="{{ position }}"
+          type="radio"
+          [value]="position"
+          [(ngModel)]="_position"
+          name="group1"
+        />
         <label for="{{ position }}">{{ position }}</label>
       </div>
     </div>
     <div>
       <h2>Category</h2>
       <div *ngFor="let category of categories">
-        <input id="{{ category }}" type="radio" [value]="category" [(ngModel)]="_category">
+        <input
+          id="{{ category }}"
+          type="radio"
+          [value]="category"
+          [(ngModel)]="_category"
+          name="group2"
+        />
         <label for="{{ category }}">{{ category }}</label>
       </div>
     </div>
     <div>
       <h2>Header</h2>
-      <input type="text" [(ngModel)]="header" id="" placeholder="Header">
+      <input type="text" [(ngModel)]="header" id="" placeholder="Header" />
     </div>
     <div>
       <h2>Body</h2>
-      <input type="text" [(ngModel)]="body" id="" placeholder="body">
+      <input type="text" [(ngModel)]="body" id="" placeholder="body" />
     </div>
   </div>
-  <button (click)="showNotification()"> Click</button>
+  <button (click)="showNotification()">Click</button>
 </div>
 
 <!-- <router-outlet></router-outlet> -->
