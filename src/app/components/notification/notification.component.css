@@ -4,6 +4,7 @@
   top: 15px;
   height: auto;
   width: 250px;
+  animation: fade-in 0.5s linear;
 }
 
 .bottom-left {
@@ -12,6 +13,7 @@
   bottom: 15px;
   height: auto;
   width: 250px;
+  animation: fade-in 0.5s linear;
 }
 
 .top-right {
@@ -20,6 +22,7 @@
   top: 15px;
   height: auto;
   width: 250px;
+  animation: fade-in 0.5s linear;
 }
 
 .bottom-right {
@@ -28,11 +31,13 @@
   bottom: 15px;
   height: auto;
   width: 250px;
+  animation: fade-in 0.5s linear;
 }
 
 .warning {
   background-color: #449a60;
   color: white;
+  animation: fade-in 0.5s linear;
 }
 
 .warning .notHeader {
@@ -42,6 +47,7 @@
 .info {
   background-color: #da822b;
   color: black;
+  animation: fade-in 0.5s linear;
 }
 
 .info .notHeader {
@@ -51,6 +57,7 @@
 .error {
   background-color: #d23a1f;
   color: white;
+  animation: fade-in 0.5s linear;
 }
 
 .error .notHeader {
@@ -80,8 +87,19 @@
   right: 0;
   top: 0;
   cursor: pointer;
+  outline: none;
 }
 
 .material-icons {
   font-size: 18px;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

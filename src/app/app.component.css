@@ -26,4 +26,5 @@ button {
   border-radius: 17px;
   color: white;
   background: #311f1e;
+  outline: none;
 }

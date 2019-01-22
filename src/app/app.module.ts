@@ -31,7 +31,6 @@ const DEV_IMPORTS: any[] = [
     AppRoutingModule,
     FormsModule,
     StoreModule.forRoot(reducers, { metaReducers }),
-    EffectsModule.forRoot([AppEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     ...DEV_IMPORTS
   ],

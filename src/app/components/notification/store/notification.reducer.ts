@@ -22,27 +22,31 @@ export default function reducer(
   switch (action.type) {
     case NotificationActions.SHOW_NOTIFICATION:
       let newNotificaitonArr = [];
-      console.log(state, 'state');
 
       if (state.length === 5) {
         newNotificaitonArr.push(state[4]);
       } else {
         newNotificaitonArr = state;
       }
-      if (state.length > 0) {
-        let pos = state[0].position;
-        state.forEach(data => {
-          if (data.position !== pos) {
-            newNotificaitonArr = [];
-            newNotificaitonArr.push(data);
-            console.log(newNotificaitonArr, 'New');
-          }
-        });
+      // if (state.length > 0) {
+      //   let pos = state[0].position;
+      //   state.forEach(data => {
+      //     if (data.position !== pos) {
+      //       newNotificaitonArr = [];
+      //       newNotificaitonArr.push(data);
+      //       console.log(newNotificaitonArr, 'New');
+      //     }
+      //   });
+      // }
+      if (
+        state.length &&
+        action.payload.position !== state[state.length - 1].position
+      ) {
+        newNotificaitonArr = [];
       }
-
       console.log([...newNotificaitonArr, action.payload]);
       return [...newNotificaitonArr, action.payload];
-      break;
+
     case NotificationActions.HIDE_NOTIFICATION:
       const notificaitonArr = state;
       notificaitonArr.splice(action.payload, 1);
