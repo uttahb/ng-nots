@@ -8,24 +8,22 @@ import { Store } from '@ngrx/store';
 import { ShowNotification } from './components/notification/store/notification.actions';
 
 describe('AppComponent', () => {
-
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
   let store;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        AppModule
-      ],
-      declarations: [],
+      imports: [AppModule],
+      declarations: []
     })
       .overrideComponent(NotificationComponent, {
         set: {
           selector: 'app-notification',
           template: `<h6>notification now</h6>`
         }
-      }).compileComponents();
+      })
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -57,7 +55,12 @@ describe('AppComponent', () => {
       expect(component.header).toEqual('Header');
       expect(component.body).toEqual('message body');
       expect(component.notificationVisible).toBeFalsy();
-      expect(component.positions).toEqual(['top-left', 'top-right', 'bottom-left', 'bottom-right']);
+      expect(component.positions).toEqual([
+        'top-left',
+        'top-right',
+        'bottom-left',
+        'bottom-right'
+      ]);
       expect(component.categories).toEqual(['warning', 'info', 'error']);
     });
 
@@ -67,8 +70,7 @@ describe('AppComponent', () => {
       // act
       component.showNotification();
       // assert
-      let call = new ShowNotification({
-        isVisible: false,
+      const call = new ShowNotification({
         isCloseButton: true,
         header: 'Header',
         body: 'message body',
@@ -76,10 +78,10 @@ describe('AppComponent', () => {
         id: 1,
         position: 'top-left',
         category: 'warning'
-      })
+      });
       expect(store.dispatch).toHaveBeenCalledWith(call);
-    })
-  })
+    });
+  });
 
   describe('Check Dom fuctionalities', () => {
     it('Changing position updates the component value', () => {
@@ -123,7 +125,7 @@ describe('AppComponent', () => {
       // act
 
       // assert
-      let inputVal = fixture.debugElement.query(By.css('#header'));
+      const inputVal = fixture.debugElement.query(By.css('#header'));
       inputVal.nativeElement.value = 'head';
       inputVal.nativeElement.dispatchEvent(new Event('input'));
       fixture.detectChanges();
@@ -136,7 +138,7 @@ describe('AppComponent', () => {
       // act
 
       // assert
-      let inputVal = fixture.debugElement.query(By.css('#body'));
+      const inputVal = fixture.debugElement.query(By.css('#body'));
       inputVal.nativeElement.value = 'body val';
       inputVal.nativeElement.dispatchEvent(new Event('input'));
       fixture.detectChanges();
@@ -151,7 +153,6 @@ describe('AppComponent', () => {
       // assert
       fixture.debugElement.query(By.css('button')).nativeElement.click();
       expect(component.showNotification).toHaveBeenCalled();
-    })
+    });
   });
-
 });

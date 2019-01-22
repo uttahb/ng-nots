@@ -21,7 +21,6 @@ export class AppComponent {
   showNotification() {
     this.store.dispatch(
       new ShowNotification({
-        isVisible: false,
         isCloseButton: true,
         header: this.header,
         body: this.body,

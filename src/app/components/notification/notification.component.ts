@@ -22,7 +22,6 @@ export class NotificationComponent implements OnInit {
   private _category: string;
   public messageBody: string;
   public messageHeader: string;
-  public i = 0;
   notifications: Notification[];
 
   @Input()
@@ -59,10 +58,6 @@ export class NotificationComponent implements OnInit {
         }
       });
       this.notifications = notifications;
-      this.i++;
-      if (this.i === 4) {
-        return false;
-      }
     });
   }
 

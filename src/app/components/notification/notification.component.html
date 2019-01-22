@@ -1,9 +1,17 @@
-<div id="notification" class="{{ 'notsContainer ' + notifications[0]?.position }}">
-  <div *ngFor="let notification of notifications" class="{{ 'notContainer ' + notification.category }}">
-    <p class="closeButton" *ngIf="notification.isCloseButton" (click)="hideThisNotifcation(index)">
-      <i class="material-icons">
-        close
-      </i>
+<div
+  id="notification"
+  class="{{ 'notsContainer ' + notifications[0]?.position }}"
+>
+  <div
+    *ngFor="let notification of notifications; let index = index"
+    class="{{ 'notContainer ' + notification.category }}"
+  >
+    <p
+      class="closeButton"
+      *ngIf="notification.isCloseButton"
+      (click)="hideThisNotifcation(index)"
+    >
+      <i class="material-icons"> close </i>
     </p>
     <div class="notHeader">{{ notification.header }}</div>
     <div class="notBody">{{ notification.body }}</div>

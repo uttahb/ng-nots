@@ -14,8 +14,7 @@ describe('NotificationComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [AppModule]
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -35,7 +34,7 @@ describe('NotificationComponent', () => {
       // act
       component.hideThisNotifcation(2);
       // assert
-      let val = new HideNotification(2);
+      const val = new HideNotification(2);
       expect(store.dispatch).toHaveBeenCalledWith(val);
     });
   });
@@ -46,43 +45,55 @@ describe('NotificationComponent', () => {
         // arrange
 
         // act
-        component.notifications = [{
-          isVisible: false,
-          isCloseButton: true,
-          header: 'Header',
-          body: 'message body',
-          timeout: 6000,
-          id: 1,
-          position: 'top-left',
-          category: 'warning'
-        }];
+        component.notifications = [
+          {
+            isCloseButton: true,
+            header: 'Header',
+            body: 'message body',
+            timeout: 6000,
+            id: 1,
+            position: 'top-left',
+            category: 'warning'
+          }
+        ];
         fixture.detectChanges();
         // assert
-        let notification = fixture.debugElement.query(By.css('#notification'));
-        expect(notification.nativeElement.textContent).toContain('message body');
+        const notification = fixture.debugElement.query(
+          By.css('#notification')
+        );
+        expect(notification.nativeElement.textContent).toContain(
+          'message body'
+        );
         expect(notification.nativeElement.textContent).toContain('Header');
         expect(notification.properties.className).toContain('top-left');
-        expect(notification.children[0].properties.className).toContain('warning');
+        expect(notification.children[0].properties.className).toContain(
+          'warning'
+        );
       });
 
       it('with info', () => {
         // arrange
 
         // act
-        component.notifications = [{
-          isVisible: false,
-          isCloseButton: true,
-          header: 'Header',
-          body: 'message body',
-          timeout: 6000,
-          id: 1,
-          position: 'top-left',
-          category: 'info'
-        }];
+        component.notifications = [
+          {
+            isCloseButton: true,
+            header: 'Header',
+            body: 'message body',
+            timeout: 6000,
+            id: 1,
+            position: 'top-left',
+            category: 'info'
+          }
+        ];
         fixture.detectChanges();
         // assert
-        let notification = fixture.debugElement.query(By.css('#notification'));
-        expect(notification.nativeElement.textContent).toContain('message body');
+        const notification = fixture.debugElement.query(
+          By.css('#notification')
+        );
+        expect(notification.nativeElement.textContent).toContain(
+          'message body'
+        );
         expect(notification.nativeElement.textContent).toContain('Header');
         expect(notification.properties.className).toContain('top-left');
         expect(notification.children[0].properties.className).toContain('info');
@@ -92,23 +103,30 @@ describe('NotificationComponent', () => {
         // arrange
 
         // act
-        component.notifications = [{
-          isVisible: false,
-          isCloseButton: true,
-          header: 'Header',
-          body: 'message body',
-          timeout: 6000,
-          id: 1,
-          position: 'top-left',
-          category: 'error'
-        }];
+        component.notifications = [
+          {
+            isCloseButton: true,
+            header: 'Header',
+            body: 'message body',
+            timeout: 6000,
+            id: 1,
+            position: 'top-left',
+            category: 'error'
+          }
+        ];
         fixture.detectChanges();
         // assert
-        let notification = fixture.debugElement.query(By.css('#notification'));
-        expect(notification.nativeElement.textContent).toContain('message body');
+        const notification = fixture.debugElement.query(
+          By.css('#notification')
+        );
+        expect(notification.nativeElement.textContent).toContain(
+          'message body'
+        );
         expect(notification.nativeElement.textContent).toContain('Header');
         expect(notification.properties.className).toContain('top-left');
-        expect(notification.children[0].properties.className).toContain('error');
+        expect(notification.children[0].properties.className).toContain(
+          'error'
+        );
       });
     });
 
@@ -117,43 +135,55 @@ describe('NotificationComponent', () => {
         // arrange
 
         // act
-        component.notifications = [{
-          isVisible: false,
-          isCloseButton: true,
-          header: 'Header',
-          body: 'message body',
-          timeout: 6000,
-          id: 1,
-          position: 'top-right',
-          category: 'warning'
-        }];
+        component.notifications = [
+          {
+            isCloseButton: true,
+            header: 'Header',
+            body: 'message body',
+            timeout: 6000,
+            id: 1,
+            position: 'top-right',
+            category: 'warning'
+          }
+        ];
         fixture.detectChanges();
         // assert
-        let notification = fixture.debugElement.query(By.css('#notification'));
-        expect(notification.nativeElement.textContent).toContain('message body');
+        const notification = fixture.debugElement.query(
+          By.css('#notification')
+        );
+        expect(notification.nativeElement.textContent).toContain(
+          'message body'
+        );
         expect(notification.nativeElement.textContent).toContain('Header');
         expect(notification.properties.className).toContain('top-right');
-        expect(notification.children[0].properties.className).toContain('warning');
+        expect(notification.children[0].properties.className).toContain(
+          'warning'
+        );
       });
 
       it('with info', () => {
         // arrange
 
         // act
-        component.notifications = [{
-          isVisible: false,
-          isCloseButton: true,
-          header: 'Header',
-          body: 'message body',
-          timeout: 6000,
-          id: 1,
-          position: 'top-right',
-          category: 'info'
-        }];
+        component.notifications = [
+          {
+            isCloseButton: true,
+            header: 'Header',
+            body: 'message body',
+            timeout: 6000,
+            id: 1,
+            position: 'top-right',
+            category: 'info'
+          }
+        ];
         fixture.detectChanges();
         // assert
-        let notification = fixture.debugElement.query(By.css('#notification'));
-        expect(notification.nativeElement.textContent).toContain('message body');
+        const notification = fixture.debugElement.query(
+          By.css('#notification')
+        );
+        expect(notification.nativeElement.textContent).toContain(
+          'message body'
+        );
         expect(notification.nativeElement.textContent).toContain('Header');
         expect(notification.properties.className).toContain('top-right');
         expect(notification.children[0].properties.className).toContain('info');
@@ -163,23 +193,30 @@ describe('NotificationComponent', () => {
         // arrange
 
         // act
-        component.notifications = [{
-          isVisible: false,
-          isCloseButton: true,
-          header: 'Header',
-          body: 'message body',
-          timeout: 6000,
-          id: 1,
-          position: 'top-right',
-          category: 'error'
-        }];
+        component.notifications = [
+          {
+            isCloseButton: true,
+            header: 'Header',
+            body: 'message body',
+            timeout: 6000,
+            id: 1,
+            position: 'top-right',
+            category: 'error'
+          }
+        ];
         fixture.detectChanges();
         // assert
-        let notification = fixture.debugElement.query(By.css('#notification'));
-        expect(notification.nativeElement.textContent).toContain('message body');
+        const notification = fixture.debugElement.query(
+          By.css('#notification')
+        );
+        expect(notification.nativeElement.textContent).toContain(
+          'message body'
+        );
         expect(notification.nativeElement.textContent).toContain('Header');
         expect(notification.properties.className).toContain('top-right');
-        expect(notification.children[0].properties.className).toContain('error');
+        expect(notification.children[0].properties.className).toContain(
+          'error'
+        );
       });
     });
 
@@ -188,43 +225,55 @@ describe('NotificationComponent', () => {
         // arrange
 
         // act
-        component.notifications = [{
-          isVisible: false,
-          isCloseButton: true,
-          header: 'Header',
-          body: 'message body',
-          timeout: 6000,
-          id: 1,
-          position: 'bottom-right',
-          category: 'warning'
-        }];
+        component.notifications = [
+          {
+            isCloseButton: true,
+            header: 'Header',
+            body: 'message body',
+            timeout: 6000,
+            id: 1,
+            position: 'bottom-right',
+            category: 'warning'
+          }
+        ];
         fixture.detectChanges();
         // assert
-        let notification = fixture.debugElement.query(By.css('#notification'));
-        expect(notification.nativeElement.textContent).toContain('message body');
+        const notification = fixture.debugElement.query(
+          By.css('#notification')
+        );
+        expect(notification.nativeElement.textContent).toContain(
+          'message body'
+        );
         expect(notification.nativeElement.textContent).toContain('Header');
         expect(notification.properties.className).toContain('bottom-right');
-        expect(notification.children[0].properties.className).toContain('warning');
+        expect(notification.children[0].properties.className).toContain(
+          'warning'
+        );
       });
 
       it('with info', () => {
         // arrange
 
         // act
-        component.notifications = [{
-          isVisible: false,
-          isCloseButton: true,
-          header: 'Header',
-          body: 'message body',
-          timeout: 6000,
-          id: 1,
-          position: 'bottom-right',
-          category: 'info'
-        }];
+        component.notifications = [
+          {
+            isCloseButton: true,
+            header: 'Header',
+            body: 'message body',
+            timeout: 6000,
+            id: 1,
+            position: 'bottom-right',
+            category: 'info'
+          }
+        ];
         fixture.detectChanges();
         // assert
-        let notification = fixture.debugElement.query(By.css('#notification'));
-        expect(notification.nativeElement.textContent).toContain('message body');
+        const notification = fixture.debugElement.query(
+          By.css('#notification')
+        );
+        expect(notification.nativeElement.textContent).toContain(
+          'message body'
+        );
         expect(notification.nativeElement.textContent).toContain('Header');
         expect(notification.properties.className).toContain('bottom-right');
         expect(notification.children[0].properties.className).toContain('info');
@@ -234,23 +283,30 @@ describe('NotificationComponent', () => {
         // arrange
 
         // act
-        component.notifications = [{
-          isVisible: false,
-          isCloseButton: true,
-          header: 'Header',
-          body: 'message body',
-          timeout: 6000,
-          id: 1,
-          position: 'bottom-right',
-          category: 'error'
-        }];
+        component.notifications = [
+          {
+            isCloseButton: true,
+            header: 'Header',
+            body: 'message body',
+            timeout: 6000,
+            id: 1,
+            position: 'bottom-right',
+            category: 'error'
+          }
+        ];
         fixture.detectChanges();
         // assert
-        let notification = fixture.debugElement.query(By.css('#notification'));
-        expect(notification.nativeElement.textContent).toContain('message body');
+        const notification = fixture.debugElement.query(
+          By.css('#notification')
+        );
+        expect(notification.nativeElement.textContent).toContain(
+          'message body'
+        );
         expect(notification.nativeElement.textContent).toContain('Header');
         expect(notification.properties.className).toContain('bottom-right');
-        expect(notification.children[0].properties.className).toContain('error');
+        expect(notification.children[0].properties.className).toContain(
+          'error'
+        );
       });
     });
 
@@ -259,43 +315,55 @@ describe('NotificationComponent', () => {
         // arrange
 
         // act
-        component.notifications = [{
-          isVisible: false,
-          isCloseButton: true,
-          header: 'Header',
-          body: 'message body',
-          timeout: 6000,
-          id: 1,
-          position: 'bottom-left',
-          category: 'warning'
-        }];
+        component.notifications = [
+          {
+            isCloseButton: true,
+            header: 'Header',
+            body: 'message body',
+            timeout: 6000,
+            id: 1,
+            position: 'bottom-left',
+            category: 'warning'
+          }
+        ];
         fixture.detectChanges();
         // assert
-        let notification = fixture.debugElement.query(By.css('#notification'));
-        expect(notification.nativeElement.textContent).toContain('message body');
+        const notification = fixture.debugElement.query(
+          By.css('#notification')
+        );
+        expect(notification.nativeElement.textContent).toContain(
+          'message body'
+        );
         expect(notification.nativeElement.textContent).toContain('Header');
         expect(notification.properties.className).toContain('bottom-left');
-        expect(notification.children[0].properties.className).toContain('warning');
+        expect(notification.children[0].properties.className).toContain(
+          'warning'
+        );
       });
 
       it('with info', () => {
         // arrange
 
         // act
-        component.notifications = [{
-          isVisible: false,
-          isCloseButton: true,
-          header: 'Header',
-          body: 'message body',
-          timeout: 6000,
-          id: 1,
-          position: 'bottom-left',
-          category: 'info'
-        }];
+        component.notifications = [
+          {
+            isCloseButton: true,
+            header: 'Header',
+            body: 'message body',
+            timeout: 6000,
+            id: 1,
+            position: 'bottom-left',
+            category: 'info'
+          }
+        ];
         fixture.detectChanges();
         // assert
-        let notification = fixture.debugElement.query(By.css('#notification'));
-        expect(notification.nativeElement.textContent).toContain('message body');
+        const notification = fixture.debugElement.query(
+          By.css('#notification')
+        );
+        expect(notification.nativeElement.textContent).toContain(
+          'message body'
+        );
         expect(notification.nativeElement.textContent).toContain('Header');
         expect(notification.properties.className).toContain('bottom-left');
         expect(notification.children[0].properties.className).toContain('info');
@@ -305,23 +373,30 @@ describe('NotificationComponent', () => {
         // arrange
 
         // act
-        component.notifications = [{
-          isVisible: false,
-          isCloseButton: true,
-          header: 'Header',
-          body: 'message body',
-          timeout: 6000,
-          id: 1,
-          position: 'bottom-left',
-          category: 'error'
-        }];
+        component.notifications = [
+          {
+            isCloseButton: true,
+            header: 'Header',
+            body: 'message body',
+            timeout: 6000,
+            id: 1,
+            position: 'bottom-left',
+            category: 'error'
+          }
+        ];
         fixture.detectChanges();
         // assert
-        let notification = fixture.debugElement.query(By.css('#notification'));
-        expect(notification.nativeElement.textContent).toContain('message body');
+        const notification = fixture.debugElement.query(
+          By.css('#notification')
+        );
+        expect(notification.nativeElement.textContent).toContain(
+          'message body'
+        );
         expect(notification.nativeElement.textContent).toContain('Header');
         expect(notification.properties.className).toContain('bottom-left');
-        expect(notification.children[0].properties.className).toContain('error');
+        expect(notification.children[0].properties.className).toContain(
+          'error'
+        );
       });
     });
   });
@@ -330,19 +405,20 @@ describe('NotificationComponent', () => {
     // arrange
     spyOn(component, 'hideThisNotifcation');
     // act
-    component.notifications = [{
-      isVisible: false,
-      isCloseButton: true,
-      header: 'Header',
-      body: 'message body',
-      timeout: 6000,
-      id: 1,
-      position: 'bottom-left',
-      category: 'error'
-    }];
+    component.notifications = [
+      {
+        isCloseButton: true,
+        header: 'Header',
+        body: 'message body',
+        timeout: 6000,
+        id: 1,
+        position: 'bottom-left',
+        category: 'error'
+      }
+    ];
     fixture.detectChanges();
     // assert
     fixture.debugElement.query(By.css('p')).nativeElement.click();
     expect(component.hideThisNotifcation).toHaveBeenCalled();
-  })
+  });
 });
