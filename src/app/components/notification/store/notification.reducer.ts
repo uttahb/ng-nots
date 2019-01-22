@@ -44,7 +44,6 @@ export default function reducer(
       ) {
         newNotificaitonArr = [];
       }
-      console.log([...newNotificaitonArr, action.payload]);
       return [...newNotificaitonArr, action.payload];
 
     case NotificationActions.HIDE_NOTIFICATION:
