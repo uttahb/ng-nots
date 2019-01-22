@@ -86,6 +86,7 @@
   height: 45px;
   width: 100%;
   position: relative;
+  margin: 0 3px;
 }
 
 .closeButton {
