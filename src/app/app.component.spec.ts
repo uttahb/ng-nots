@@ -72,7 +72,7 @@ describe('AppComponent', () => {
         isCloseButton: true,
         header: 'Header',
         body: 'message body',
-        timeout: 6000,
+        timeout: 90000,
         id: 1,
         position: 'top-left',
         category: 'warning'
