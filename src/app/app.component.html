@@ -3,6 +3,7 @@
   <h1>Let's do some notifications from ashes!</h1>
   <app-notification position="{{ _position }}" category="{{ _category }}"></app-notification>
   <div class="container-options">
+    <div></div>
     <div>
       <h2>Position</h2>
       <div *ngFor="let position of positions">
@@ -17,6 +18,8 @@
         <label for="{{ category }}">{{ category }}</label>
       </div>
     </div>
+    <div></div>
+    <div></div>
     <div>
       <h2>Header</h2>
       <input type="text" [(ngModel)]="header" id="header" placeholder="Header" />

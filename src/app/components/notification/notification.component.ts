@@ -9,6 +9,8 @@ import { messages, Notification } from './store';
   styleUrls: ['./notification.component.css']
 })
 export class NotificationComponent implements OnInit {
+  setTimer = [];
+  count: number;
   private positionsEnum = [
     'top-left',
     'top-right',
@@ -41,6 +43,21 @@ export class NotificationComponent implements OnInit {
   }
   constructor(private store: Store<any>) {
     this.store.select(messages).subscribe((notifications: Notification[]) => {
+      if (this.count < notifications.length) {
+        this.setTimer.forEach(timer => {
+          clearTimeout(timer);
+        });
+      }
+      this.count = notifications.length;
+      notifications.forEach((not, index) => {
+        if (not.category === 'info') {
+          this.setTimer.push(
+            setTimeout(() => {
+              this.hideThisNotifcation(index);
+            }, not.timeout)
+          );
+        }
+      });
       this.notifications = notifications;
       this.i++;
       if (this.i === 4) {
